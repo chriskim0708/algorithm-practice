@@ -40,8 +40,8 @@ class SinglyLinkedList {
       while (currentHead.next) {
         if (currentHead.data === value) {
           // 삭제
-          prev.next = currentHead.next;
           prev = currentHead;
+          prev.next = currentHead.next;
           currentHead = currentHead.next;
           break;
         }
@@ -89,16 +89,16 @@ sll1.insert(1);
 sll1.insert(12);
 sll1.insert(34);
 
-console.log("head", sll1.head.data);
-console.log("head next", sll1.head.next.data);
-console.log("head next next", sll1.head.next.next.data);
-console.log("head next next next", sll1.head.next.next.next?.data);
-console.log("size", sll1.size);
+// console.log("head", sll1.head.data);
+// console.log("head next", sll1.head.next.data);
+// console.log("head next next", sll1.head.next.next.data);
+// console.log("head next next next", sll1.head.next.next.next?.data);
+// console.log("size", sll1.size);
 // sll1.remove(34);
-console.log("size", sll1.size);
+// console.log("size", sll1.size);
 // console.log("delete head", sll1.deleteAtHead());
-console.log("head", sll1.head.data);
-console.log("head", sll1.find(1));
+// console.log("head", sll1.head.data);
+// console.log("head", sll1.find(1));
 
 function reverseSingleLinkedList(sll) {
   let node = sll.head;
@@ -116,7 +116,6 @@ function reverseSingleLinkedList(sll) {
 
   return node;
 }
-
 console.log("reverseSingleLinkedList", reverseSingleLinkedList(sll1));
 
 function deleteDuplicateUnsortedSll(sll) {
@@ -134,11 +133,13 @@ function deleteDuplicateUnsortedSll(sll) {
     }
     temp = temp.next;
   }
+
+  console.log("track", track);
+
+  return track;
 }
 
 sll1.insert(12);
 sll1.insert(34);
 
 deleteDuplicateUnsortedSll(sll1);
-
-console.log("sll1", sll1);
